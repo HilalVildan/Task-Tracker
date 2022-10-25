@@ -28,7 +28,7 @@ const GorevEkle = ({ mydata, setMydata, show, setShow }) => {
     <>
     <div className="text-center">
         <h1 className="fw-bold">Task Tracker</h1>
-        <button className="btn btn-danger mb-4" onClick={()=>setShow(!show)}> { show ? ("Close Add Task Bar") :  ("Show Add Task Bar")}</button>
+        <button className="btn btn-danger mb-2" onClick={()=>setShow(!show)}> { show ? ("Close Add Task Bar") :  ("Show Add Task Bar")}</button>
       </div>
     {show ? (<div className="container-ekle">
       

@@ -38,8 +38,8 @@ const GorevleriGoster = ({ mydata, setMydata }) => {
                 completed(id, !bittiMi);
               }}
             >
-              <h3 className="fw-bold">{text} </h3>
-              <p className="fs-5">{day}</p>
+              <h3 className="fw-bold fs-4">{text} </h3>
+              <p className="fs-6">{day}</p>
             </div>
             <div>
               <i
