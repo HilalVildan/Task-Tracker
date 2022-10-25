@@ -1,6 +1,12 @@
-import React from "react";
+// import React, {useState} from "react";
+// import moment from "moment";
+
 
 const GorevleriGoster = ({ mydata, setMydata }) => {
+
+  // const [date, setDate] = useState(moment());
+  // date.format("MMM Mo [at] h a");
+
   const completed = (id, bittiMi) => {
     // console.log(id, bittiMi);
 
@@ -27,6 +33,7 @@ const GorevleriGoster = ({ mydata, setMydata }) => {
     {mydata.length ? (<div className="container-göster">
       {mydata.map((item) => {
         const { text, day, id, bittiMi } = item;
+       
         return (
           <div
             key={id}
