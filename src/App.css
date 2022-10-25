@@ -21,7 +21,7 @@ body {
     rgb(231, 191, 213)
   );
   margin: 3rem auto;
-  max-width: 600px;
+  max-width: 500px !important;
   padding: 2rem;
   /* overflow: hidden; */
   border-radius: 5px;
