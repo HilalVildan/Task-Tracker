@@ -1,23 +1,37 @@
 import React, { useState } from "react";
 
-const GorevEkle = ({ mydata, setMydata, show, setShow }) => {
+const AddTask = ({ mydata, setMydata, show, setShow }) => {
   const [task, setTask] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState();
 
   const addTask = (e) => {
     e.preventDefault();
 
-    const newTodo = {
-      bittiMi: false,
-      day: date,
-      id: mydata.length + 1,
-      text: task,
-    };
+    setMydata([
+      {
+        completed: false,
+        day: date,
+        id: mydata.length + 1,
+        text: task,
+      },
+      ...mydata,
+    ]);
 
-    let newmydata = [...mydata, { ...newTodo }];
-    newmydata = newmydata.sort((a, b) => b.id - a.id);
-    // console.log(mydata);
-    setMydata(newmydata);
+    //     const newTodo = {
+    //       completed: false,
+    //       day: date,
+    //       id: mydata.length + 1,
+    //       text: task
+
+    //     };
+
+    //     let newmydata = [...mydata, { ...newTodo }];
+    //     newmydata = newmydata.sort((a, b) => b.id - a.id);
+
+    //     setMydata(newmydata);
+    // console.log(newmydata);
+    //     setTask("");
+    //     setDate("");
 
     setTask("");
     setDate("");
@@ -79,4 +93,4 @@ const GorevEkle = ({ mydata, setMydata, show, setShow }) => {
   );
 };
 
-export default GorevEkle;
+export default AddTask;

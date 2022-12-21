@@ -1,6 +1,6 @@
 import { useState } from "react";
-import GorevEkle from "../components/GorevEkle";
-import GorevleriGoster from "../components/GorevleriGoster";
+import AddTask from "../components/AddTask";
+import ShowTask from "../components/ShowTask";
 
 import data from "../helper/Data";
 
@@ -13,9 +13,14 @@ const [show, setShow] = useState(true);
 
   return (
     <div>
-      <GorevEkle mydata={mydata} setMydata={setMydata}  show={show} setShow={setShow} />
+      <AddTask
+        mydata={mydata}
+        setMydata={setMydata}
+        show={show}
+        setShow={setShow}
+      />
 
-      <GorevleriGoster mydata={mydata} setMydata={setMydata} />
+      <ShowTask mydata={mydata} setMydata={setMydata} />
     </div>
   );
 };

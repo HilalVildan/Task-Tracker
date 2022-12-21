@@ -5,10 +5,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 body {
-  /* height: 100vh; */
+  min-height: 100vh;
+
   font-family: "Poppins", sans-serif;
   background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
   background-repeat: no-repeat;
@@ -25,9 +27,8 @@ body {
   padding: 2rem;
   /* overflow: hidden; */
   border-radius: 5px;
+  /* margin-bottom: 1rem; */
 }
-
-
 
 .btn {
   border: none;
@@ -59,38 +60,35 @@ body {
   border: none;
 } */
 
-
-.liste-text{
+.liste-text {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0px 15px;
   margin: 10px 25px;
   background-color: white;
-  height: 60px;
-   
+  height: 70px;
 }
 
-.fa-solid{
+.fa-solid {
   color: red;
   font-size: 20px;
   padding-right: 10px;
   text-decoration: none !important;
 }
 
-.text-div{
+.text-div {
   display: flex;
-  align-items:flex-start; 
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  
+
   margin-top: 10px;
   line-height: 10px;
 }
 
-
-/*! data daki bittiMi kısmı false iken görünecek stil */
+/*! data daki completed kısmı false iken görünecek stil */
 .falseStil {
   background: #f4f4f4;
   /* background: yellow; */
@@ -98,13 +96,10 @@ body {
   padding: 10px 20px;
   cursor: pointer;
 }
-/*! data daki bittiMi kısmı true iken görünecek stil */
+/*! data daki completed kısmı true iken görünecek stil */
 .trueStil {
   border-left: 10px solid rgb(102, 18, 77);
   text-decoration: line-through;
   background-color: darkgrey;
   padding: 10px 20px;
-
 }
-
-
