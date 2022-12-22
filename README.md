@@ -38,4 +38,4 @@ $ yarn start
 
 #### [View Demo](https://task-tracker-reactt.netlify.app/)
 
-![Demo](./gif.gif)
+![Demo](./MTVideo.gif)
