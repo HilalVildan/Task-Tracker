@@ -45,12 +45,12 @@ body {
 
 /* .form-control {
   margin: 15px 0;
-} */
+}
 
-/* .form-control label {
+.form-control label {
   display: block;
-} */
-/* 
+}
+
 .form-control input {
   width: 100%;
   height: 40px;
@@ -68,13 +68,6 @@ body {
   margin: 10px 25px;
   background-color: white;
   height: 70px;
-}
-
-.fa-solid {
-  color: red;
-  font-size: 20px;
-  padding-right: 10px;
-  text-decoration: none !important;
 }
 
 .text-div {

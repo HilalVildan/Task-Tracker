@@ -1,68 +1,50 @@
-// import React, {useState} from "react";
-// import moment from "moment";
+import React from "react";
+import { FaTimesCircle } from "react-icons/fa";
 
-const ShowTask = ({ mydata, setMydata }) => {
-  // const [date, setDate] = useState(moment());
-  // date.format("MMM Mo [at] h a");
-
-  const complete = (id, completed) => {
-    // console.log(id, completed);
-
-    setMydata(
-      mydata.map((item) => {
-        if (item.id === id) {
-          return { ...item, completed };
-        } else {
-          return item;
-        }
-      })
-    );
-  };
-
+const ShowTask = ({ task, setTask, Data }) => {
   const DeleteTask = (id) => {
-    console.log(id);
-    const newList = mydata.filter((item) => item.id !== id);
-    setMydata(newList);
+    setTask(task.filter((i) => i.id !== id));
   };
 
-  console.log(mydata);
   return (
-    <>
-      {mydata.length ? (
-        <div className="container-show">
-          {mydata.map((item) => {
-            const { text, day, id, completed } = item;
-
-            return (
+    <div>
+      {/* task lerin hepsi bitince "NO TASK " yazsın */}
+      {task.length !== 0 ? (
+        task.map((data) => {
+          const { id, text, day, completed } = data;
+          return (
+            <div
+              className={
+                completed ? "liste-text trueStil" : "liste-text falseStil"
+              }
+              key={id}
+            >
               <div
-                key={id}
-                className={
-                  completed ? "liste-text trueStil" : "liste-text falseStil"
+                onClick={() =>
+                  setTask(
+                    task.map((i) =>
+                      i.id === id ? { ...i, completed: !i.completed } : i
+                    )
+                  )
                 }
               >
-                <div
-                  className="text-div"
-                  onClick={() => {
-                    complete(id, !completed);
-                  }}
-                >
-                  <h3 className="fw-bold fs-4">{text} </h3>
-                  <p className="fs-6">{day}</p>
-                </div>
-                <div>
-                  <i
-                    className="fa-solid fa-trash"
-                    onClick={() => DeleteTask(id)}
-                  ></i>
-                </div>
+                <h3 className="fw-bold fs-4">{text} </h3>
+                <h6 className="fs-6">{day}</h6>
               </div>
-            );
-          })}
-        </div>
+
+              <div>
+                <FaTimesCircle
+                  style={{ color: "red" }}
+                  onClick={() => DeleteTask(id)}
+                />
+              </div>
+            </div>
+          );
+        })
       ) : (
-        <div className="fw-bold text-center fs-4">No Task to show</div>
+        <h1 className="fw-bold text-center fs-4 pt-4">No Task to show</h1>
       )}
-    </>
+    </div>
   );
 };
 
