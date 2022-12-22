@@ -3,12 +3,12 @@ import moment from "moment";
 
 const AddTask = ({ task, setTask }) => {
   const [texts, setTexts] = useState("");
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState("");
 
   const addTask = (e) => {
     e.preventDefault();
 
- if (texts!=="" && date!==null ) {
+ if (texts!=="" && date!=="" ) {
   setTask([
     ...task,
     {
@@ -18,6 +18,8 @@ const AddTask = ({ task, setTask }) => {
       text: texts,
     },
   ]);
+ } else {
+   alert("Task & Date cannot be empty!")
  }
 
     setTexts("");

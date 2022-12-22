@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTimesCircle } from "react-icons/fa";
 
-const ShowTask = ({ task, setTask, Data }) => {
+const ShowTask = ({ task, setTask }) => {
   const DeleteTask = (id) => {
     setTask(task.filter((i) => i.id !== id));
   };
