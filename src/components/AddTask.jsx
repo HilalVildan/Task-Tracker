@@ -13,7 +13,6 @@ const AddTask = ({ task, setTask }) => {
       {
         id: task.length + 1,
         completed: false,
-        // day: date.format("MMMM Do YYYY, h:mm:ss a"),
         day: moment(date).format("MMM Do [at] h:mma"),
         text: texts,
       },
@@ -53,8 +52,10 @@ const AddTask = ({ task, setTask }) => {
               id="day"
               type="datetime-local"
               name="day"
+              placeholder="Date"
               className="form-control mb-4"
               value={date}
+              onfocus="(this.type='date')"
               onChange={(e) => {
                 setDate(e.target.value);
               }}
