@@ -3,20 +3,22 @@ import moment from "moment";
 
 const AddTask = ({ task, setTask }) => {
   const [texts, setTexts] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(null);
 
   const addTask = (e) => {
     e.preventDefault();
 
-    setTask([
-      ...task,
-      {
-        id: task.length + 1,
-        completed: false,
-        day: moment(date).format("MMM Do [at] h:mma"),
-        text: texts,
-      },
-    ]);
+ if (texts!=="" && date!==null ) {
+  setTask([
+    ...task,
+    {
+      id: task.length + 1,
+      completed: false,
+      day: moment(date).format("MMM Do [at] h:mma"),
+      text: texts,
+    },
+  ]);
+ }
 
     setTexts("");
     setDate("");
